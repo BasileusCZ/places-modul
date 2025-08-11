@@ -68,8 +68,19 @@ Below is a minimal HTML page demonstrating full integration:
 </head>
 <body>
 
-  <!-- Input field to receive the selected point_id -->
-  <input id="basileus-point" name="basileus_point" type="text" value="">
+  <!-- Input fields to receive the selected point_id -->
+  <h3>ID</h3>
+
+  <input class="basileus-point" name="basileus_poin2t" type="text" value="">
+
+  <h3>Název</h3>
+
+  <input class="basileus-title" name="basileus_title2" type="text" value="">
+
+  <h3>Adresa</h3>
+
+  <input class="basileus-address" name="basileus_address2" type="text" value="">
+
 
   <!-- Button to open the Basileus widget -->
   <button id="basialeus-open">Basileus</button>

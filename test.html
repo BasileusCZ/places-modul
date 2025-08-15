@@ -3,15 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Demo Basileus Module</title>
   </head>
 
   <body>
 
-  <input id="basileus-point" name="basileus_point" type="text" value="">
+  <h2>Select where you want to send the shipment</h2>
+  <h3>ID</h3>
+  <input class="basileus-point" name="basileus_poin2t" type="text" value="">
+  <h3>Název</h3>
+  <input class="basileus-title" name="basileus_title2" type="text" value="">
+  <h3>Adresa</h3>
+  <input class="basileus-address" name="basileus_address2" type="text" value="">
+  <br><br>
+  <button data-type="0" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+pickup point or box</button>
+  <br>
+  <br>
+  <button data-type="1" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+pickup point</button>
+  <button data-type="2" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+box</button>
 
-  <button id="basialeus-open">Basileus</button>
-
-  <script src="http://popup.basileus.cz/basileus.js"></script>     
+  <script src="https://popup.basileus.cz/basileus.js"></script>     
   </body>
 </html>

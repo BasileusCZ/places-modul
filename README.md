@@ -32,19 +32,35 @@ Integration consists of three essential HTML elements:
 
 ### 1. Input Field
 
-Add a text input with the `id` **basileus-point**. When a user selects a point in the widget, the script will populate this field with the corresponding `point_id`.
+Add a text input with the `class` **basileus-point**. When a user selects a point in the widget, the script will populate this field with the corresponding `point_id`.
 
 ```html
-<input id="basileus-point" name="basileus_point" type="text" value="">
+<input class="basileus-point" name="basileus_point" type="text" value="">
 ```
 
 ### 2. Open Button
 
-Add a button with the `id` **basialeus-open**. Clicking this button opens the Basileus popup widget.
+Add a button with the `class` **basialeus-open** and `data-tag-value` **basialeus-point**. Clicking this button opens the Basileus popup widget.
 
 ```html
-<button id="basialeus-open">Basileus</button>
+<button class="basialeus-open" data-tag-value="basileus-point">Basileus</button>
 ```
+
+Optional settings: 
+
+`data-type` - values:
+- 0 (default) - show all pickup places and boxes
+- 1 - show all pickup places
+- 2 - show all pickup boxes
+
+`data-tag-value` - class of the element that will be filled with the delivery location ID
+If it is <input>, the value will be set, otherwise the internal text of the element.
+
+`data-tag-address` - class of the element that will be filled with the delivery address
+If it is <input>, the value will be set, otherwise the internal text of the element.
+
+`data-tag-title` - class of the element that will be filled with the delivery location name
+If it is <input>, the value will be set, otherwise the internal text of the element.
 
 ### 3. Script Include
 
@@ -61,33 +77,33 @@ Below is a minimal HTML page demonstrating full integration:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basileus Popup Integration</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Basileus Module</title>
+  </head>
 
-  <!-- Input fields to receive the selected point_id -->
+  <body>
+
+  <h2>Select where you want to send the shipment</h2>
   <h3>ID</h3>
-
   <input class="basileus-point" name="basileus_poin2t" type="text" value="">
-
   <h3>Název</h3>
-
   <input class="basileus-title" name="basileus_title2" type="text" value="">
-
   <h3>Adresa</h3>
-
   <input class="basileus-address" name="basileus_address2" type="text" value="">
+  <br><br>
+  <button data-type="0" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+pickup point or box</button>
+  <br>
+  <br>
+  <button data-type="1" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+pickup point</button>
+  <button data-type="2" data-tag-value="basileus-point" data-tag-title="basileus-title" data-tag-address="basileus-address" class="basileus-open">Deliver to
+box</button>
 
-
-  <!-- Button to open the Basileus widget -->
-  <button id="basialeus-open">Basileus</button>
-
-  <!-- Script that powers the widget -->
-  <script src="https://popup.basileus.cz/basileus.js"></script>
-</body>
+  <script src="https://popup.basileus.cz/basileus.js"></script>     
+  </body>
 </html>
 ```
 
